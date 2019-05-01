@@ -35,7 +35,7 @@ export default class App extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      .post("http://https://battle-buddy-redux-be.herokuapp.com/users/login", {
+      .post("https://battle-buddy-redux-be.herokuapp.com/users/login", {
         email: this.state.email,
         password: this.state.password
       })
