@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Grid, Segment, Button } from 'semantic-ui-react'
 
 export default class App extends Component {
 
@@ -27,6 +26,12 @@ export default class App extends Component {
   //   this.fetchPosts();
   // }
 
+  handleInput = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
   handleLogin = event => {
     event.preventDefault();
     axios
@@ -50,27 +55,9 @@ export default class App extends Component {
   render() {
     return (
       <form>
-        <Segment className="form-segment">
-          <Grid columns='equal'>
-            <Grid.Row>
-              <Grid.Column>
-                <input name="email" placeholder="Email" onChange={this.props.handleInput} />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                <input type="password" name="password" placeholder="Password" onChange={this.props.handleInput} />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                <Button fluid name="login" onClick={this.props.handleLogin} secondary>
-                  Submit
-                  </Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+        <input name="email" placeholder="Email" onChange={this.handleInput} />
+        <input type="password" name="password" placeholder="Password" onChange={this.handleInput} />
+        <button fluid name="login" onClick={this.handleLogin} secondary>Submit</button>
       </form>
     )
   }
