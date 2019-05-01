@@ -57,7 +57,7 @@ export default class App extends Component {
       <form>
         <input name="email" placeholder="Email" onChange={this.handleInput} />
         <input type="password" name="password" placeholder="Password" onChange={this.handleInput} />
-        <button fluid name="login" onClick={this.handleLogin} secondary>Submit</button>
+        <button name="login" onClick={this.handleLogin}>Submit</button>
       </form>
     )
   }
