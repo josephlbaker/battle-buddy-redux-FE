@@ -25,19 +25,6 @@ export default class GamePosts extends Component {
     this.fetchPosts();
   }
 
-  handleCheckbox = event => {
-    if (this.state.isEvent === false || this.state.isEvent === 'off') {
-      this.setState({
-        isEvent: true
-      })
-    }
-    if (this.state.isEvent === true || this.state.isEvent === 'on') {
-      this.setState({
-        isEvent: false
-      })
-    }
-  }
-
   handleInput = event => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -92,10 +79,17 @@ export default class GamePosts extends Component {
       })
   };
 
-  _renderPosts = (post) => {
+  handleGoBack = () => {
+    this.setState({
+      postId: ''
+    })
+    this.fetchPosts();
+  }
+
+  _renderPosts = (post, key) => {
     if (post.gameId === this.props.gameId.toString()) {
       return (
-        <div>
+        <div key={key}>
           <h3>{post.title}</h3> <p className="username">-{post.user.username}</p>
           <br />
           <p>{post.content}</p>
