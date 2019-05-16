@@ -8,6 +8,7 @@ import Profile from './Profile';
 
 
 export default class Nav extends Component {
+
   render() {
     return (
       <Router>
@@ -15,16 +16,16 @@ export default class Nav extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Popular Games</Link>
+                <Link to="/" onClick={this.forceUpdate}>Popular Games</Link>
               </li>
               <li>
-                <Link to="/search/">Search</Link>
+                <Link to="/search/" onClick={this.forceUpdate}>Search</Link>
               </li>
               <li>
-                <Link to="/feed/">My Feed</Link>
+                <Link to="/feed/" onClick={this.forceUpdate}>My Feed</Link>
               </li>
               <li>
-                <Link to="/profile/">Profile</Link>
+                <Link to="/profile/" onClick={this.forceUpdate}>Profile</Link>
               </li>
             </ul>
           </nav>

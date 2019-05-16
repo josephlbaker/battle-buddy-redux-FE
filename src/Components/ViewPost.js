@@ -26,7 +26,7 @@ export default class ViewPost extends Component {
 
   returnToGamePosts = (e) => {
     e.preventDefault();
-    this.props.handleNewPostSubmit();
+    this.props.handleCancel();
   }
 
   handleClick = () => {
@@ -48,14 +48,17 @@ export default class ViewPost extends Component {
           <EditPost
             handleGoBack={this.props.handleGoBack}
             handleBackToPosts={this.handleBackToPosts}
-            post={this.state.post} />
+            post={this.state.post}
+            returnToGamePosts={this.returnToGamePosts}
+            handleCancel={this.props.handleCancel}
+          />
         </div>
       )
     }
 
     if (this.props.user._id === this.state.post.user) {
       return (
-        <div class="parent-container">
+        <div className="parent-container">
           <button className="back" onClick={this.props.handleGoBack}>Back to posts</button>
           <h3>{this.state.post.title}</h3><p> - {this.props.username}</p>
           <br />
@@ -70,7 +73,7 @@ export default class ViewPost extends Component {
       )
     }
     return (
-      <div class="parent-container">
+      <div className="parent-container">
         <button className="back" onClick={this.props.handleGoBack}>Back to posts</button>
         <h3>{this.state.post.title}</h3><p> - {this.props.username}</p>
         <br />

@@ -40,7 +40,8 @@ export default class EditPost extends Component {
       })
   };
 
-  handleDeletePost = () => {
+  handleDeletePost = event => {
+    event.preventDefault();
     axios
       .delete(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/${this.props.post._id}/deletepost`)
       .then(res => {

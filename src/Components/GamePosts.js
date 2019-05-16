@@ -9,7 +9,6 @@ export default class GamePosts extends Component {
     posts: [],
     postId: '',
     newPost: false,
-    isEvent: false
   }
 
   fetchPosts = () => {
@@ -125,13 +124,14 @@ export default class GamePosts extends Component {
           handleGoBack={this.handleGoBack}
           user={this.props.user}
           postId={this.state.postId}
-          handleNewPostSubmit={this.handleNewPostSubmit}
+          handleCancel={this.handleCancel}
         />
       )
     }
     if (!this.state.newPost) {
       return (
         <div className="game-post-body">
+          <button className="new-post" onClick={this.handleNewPostClick}>New Post</button>
           <h1>Posts for {this.props.gameTitle}</h1>
           {
             posts ?
