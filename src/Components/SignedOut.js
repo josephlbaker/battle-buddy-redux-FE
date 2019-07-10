@@ -10,16 +10,8 @@ export default class SignedOut extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Sign In</Link>
-              </li>
-              <li>
-                <Link to="/signup/">Sign Up</Link>
-              </li>
-            </ul>
-          </nav>
+          <Link to="/">Sign In</Link>
+          <Link to="/signup/">Sign Up</Link>
           <Route
             path="/"
             render={(props) => <SignInForm {...props}

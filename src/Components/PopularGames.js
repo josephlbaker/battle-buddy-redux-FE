@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import $ from 'jquery';
 
+import '../styles/PopularGames.css';
+
 import GamePosts from './GamePosts';
 
 export default class PopularGames extends Component {
